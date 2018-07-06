@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: shweta2
+  name: shweta2
+  namespace: default
+  selfLink: /api/v1/namespaces/default/services/nginx2
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 6000
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: shweta2
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
