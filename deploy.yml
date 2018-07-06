@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: shweta2
+  name: shweta2
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: shweta2 
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: shweta2
+    spec:
+      containers:
+      - image: tomcat
+        imagePullPolicy: Always
+        name: tomcat
