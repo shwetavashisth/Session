@@ -5,11 +5,10 @@ metadata:
     run: shweta2
   name: shweta2
   namespace: default
-  selfLink: /api/v1/namespaces/default/services/nginx2
 spec:
   externalTrafficPolicy: Cluster
   ports:
-  - nodePort: 6000
+  - nodePort: 
     port: 8080
     protocol: TCP
     targetPort: 8080
